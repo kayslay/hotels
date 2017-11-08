@@ -1,0 +1,23 @@
+{
+  "name": "hotels",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": "8.3.0"
+  },
+  "keywords": [],
+  "author": "Badewa Kayode <badewakayode1@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^4.0.0",
+    "mongoose": "^4.13.0",
+    "require_all": "^2.0.2",
+    "restify": "^6.3.1",
+    "restify-router": "^0.5.0",
+    "web-crawljs": "^2.1.2"
+  }
+}
