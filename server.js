@@ -6,16 +6,17 @@ const crawler = require("./lib/hotels_crawl");
 
 const env = process.env;
 
+//Mongo set up
 mongoose.Promise = Promise;
 
 mongoose.connect(env.MONGO_URI);
 
-
+//
 server.listen((env.PORT || 8000), () => {
 	console.log(`server ${server.name} running on port ${server.address().port}`)
 });
 
-//Todo run once and once alone
+//run this function when u want to crawl
 crawler()
 
 
