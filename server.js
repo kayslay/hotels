@@ -17,7 +17,7 @@ server.listen((env.PORT || 8000), () => {
 });
 
 //run this function when u want to crawl
-crawler()
+// crawler()
 
 
 process.on("uncaughtException", (arg) => {

@@ -14,4 +14,8 @@ Router.get('/city/:city/', controller.findByCity);
 Router.get('/name/:name/:page([0-9]*)/', controller.findByName);
 Router.get('/name/:name/', controller.findByName);
 
+//api v2
+Router.get("/api/v2/",controller.apiV2Index)
+Router.get("/api/v2/:id",controller.apiV2Single)
+
 module.exports = Router;
