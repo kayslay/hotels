@@ -2,7 +2,6 @@ const server = require("./app");
 const mongoose = require("mongoose");
 require("dotenv").config();
 
-const crawler = require("./lib/hotels_crawl");
 
 const env = process.env;
 
@@ -17,7 +16,8 @@ server.listen((env.PORT || 8000), () => {
 });
 
 //run this function when u want to crawl
-// crawler()
+require("./lib/hotels_crawl");
+
 
 
 process.on("uncaughtException", (arg) => {

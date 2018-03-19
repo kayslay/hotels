@@ -11,7 +11,40 @@ The API endpoint :
 This a play project. Read this medium post to know more
 [https://medium.com/@badewakayode/how-i-scraped-8000-hotels-from-hotels-ng-abdc4fa2510f](https://medium.com/@badewakayode/how-i-scraped-8000-hotels-from-hotels-ng-abdc4fa2510f)
 
-# Endpoints
+# Endpoints API V2
+This API version support every thing from v1 and more. Now user can now make multiple query request to a single endpoint.
+It now possible to search by name, by city and by state in a single request.
+
+Support for selecting now included. Get only the parameters you need returned from an hotel.
+
+## Get Hotel List
+Get multiple hotels [https://hotels-apis.herokuapp.com/api/v2/](https://hotels-apis.herokuapp.com/api/v2)
+
+The request query parameters 
+
+| parameter   | required |              Description               |
+| ----------- | :------: | :------------------------------------: |
+| **page** |  false   | used to load the `nth` array of hotels |
+| **city** |  false   |the city to get the hotels from |
+| **state** |  false   | the state to get the hotels from |
+| **select** |  false   | the parameter to select in each hotel. the parameters are separated by a ",". ex: `"hotel_name,city"` |
+
+## Get a Single Hotel
+Get a single hotel [https://hotels-apis.herokuapp.com/api/v2/:id](https://hotels-apis.herokuapp.com/api/v2/5a0075853438c300122bbda0)
+
+The route parameter
+| parameter   | required |              Description               |
+| ----------- | :------: | :------------------------------------: |
+| **id** |  true   | the id of the hotel to get |
+
+The request query parameter
+| parameter   | required |              Description               |
+| ----------- | :------: | :------------------------------------: |
+| **select** |  false   |  the parameter to select in each hotel. the parameters are separated by a ",". ex: `"hotel_name,city"` |
+
+# Endpoints API V1
+
+## **NOTICE:** This API version would be moved to `/api/v1` endpoint on the 1st of April, 2018.
 
 ## Get Hotel List
 
@@ -33,7 +66,7 @@ This endpoint returns an array of hotels that matches the name searched.
 
 | parameter        | required |              Description               |
 | ---------------- | :------: | :------------------------------------: |
-| **nameToSearch** |   true   | The name used to serch for the hotels  |
+| **nameToSearch** |   true   | The name used to search for the hotels  |
 | **pageNum**      |  false   | used to load the `nth` array of hotels |
 
 ## Get Hotels In A City
@@ -58,7 +91,7 @@ This endpoint returns hotels in a particular state
 | **state**   |   true   | The state to get the array of hotels from |
 | **pageNum** |  false   |  used to load the `nth` array of hotels   |
 
-## Response
+# Response
 
 The `content-type` header of the response is `application/json`.
 

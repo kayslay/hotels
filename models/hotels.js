@@ -8,6 +8,8 @@ const hotelSchema = new Schema({
 	present_price: {type: String, required: false},
 	features: {type: [String]},
 	hotelsNg_link: {type: String, required: false},
+	description:String,
+	room_types: {name:String,facilities:[String],price:String}
 });
 
 hotelSchema.index({hotel_name: 1, city: 1, state: 1}, {unique: true, dropDups: true});
