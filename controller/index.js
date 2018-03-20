@@ -15,13 +15,18 @@ function index(req, res, next) {
 		.limit(limit)
 		.skip(page * limit)
 		.exec()
-		.then(hotels => {
+		.then(hotel => {
+			if(hotels){
 			res.send(Object.assign(hotels,{Notice:"switch to api v2 before the 1st of April ;)."}));
+			}else{
+				res.status(404)
+				res.send({error:"empty object returned"})
+			}
 			next()
 		})
 		.catch(err => {
 			res.status(503); //Todo find the right status
-			res.send("error: " + err.message);
+			res.send({error:err.message});
 			next()
 		})
 }
@@ -33,13 +38,18 @@ function findByName(req, res, next) {
 		.limit(limit)
 		.skip(page * limit)
 		.exec()
-		.then(hotels => {
+		.then(hotel => {
+			if(hotels){
 			res.send(Object.assign(hotels,{Notice:"switch to api v2 before the 1st of April ;)."}));
+			}else{
+				res.status(404)
+				res.send({error:"empty object returned"})
+			}
 			next()
 		})
 		.catch(err => {
 			res.status(503); //Todo find the right status
-			res.send("error: " + err.message);
+			res.send({error:err.message});
 			next()
 		})
 }
@@ -57,13 +67,18 @@ function findByCity(req, res, next) {
 		.limit(limit)
 		.skip(page * limit)
 		.exec()
-		.then(hotels => {
+		.then(hotel => {
+			if(hotels){
 			res.send(Object.assign(hotels,{Notice:"switch to api v2 before the 1st of April ;)."}));
+			}else{
+				res.status(404)
+				res.send({error:"empty object returned"})
+			}
 			next()
 		})
 		.catch(err => {
 			res.status(503); //Todo find the right status
-			res.send("error: " + err.message);
+			res.send({error:err.message});
 			next()
 		})
 }
@@ -81,13 +96,18 @@ function findByState(req, res, next) {
 		.limit(limit)
 		.skip(page * limit)
 		.exec()
-		.then(hotels => {
+		.then(hotel => {
+			if(hotels){
 			res.send(Object.assign(hotels,{Notice:"switch to api v2 before the 1st of April ;)."}));
+			}else{
+				res.status(404)
+				res.send({error:"empty object returned"})
+			}
 			next()
 		})
 		.catch(err => {
 			res.status(503); //Todo find the right status
-			res.send("error: " + err.message);
+			res.send({error:err.message});
 			next()
 		})
 }
@@ -105,13 +125,18 @@ function apiV2Index(req, res, next) {
 		.limit(limit)
 		.skip(page * limit)
 		.exec()
-		.then(hotels => {
-			res.send(hotels);
+		.then(hotel => {
+			if(hotels){
+				res.send(hotels);
+			}else{
+				res.status(404)
+				res.send({error:"empty object returned"})
+			}
 			next()
 		})
 		.catch(err => {
 			res.status(503); //Todo find the right status
-			res.send("error: " + err.message);
+			res.send({error:err.message});
 			next()
 		})
 }
@@ -125,17 +150,17 @@ function apiV2Single(req,res,next){
 	hotelModel.findOne(findBy,select)
 	.exec()
 	.then(hotel => {
-		if (hotel == null){
-			res.status(404)
-			res.send(`error hotel not found`)
-		}else{
+		if(hotel){
 			res.send(hotel);
+		}else{
+			res.status(404)
+			res.send({error:"empty object returned"})
 		}
 		next()
 	})
 	.catch(err => {
 		res.status(503); //Todo find the right status
-		res.send("error: " + err.message);
+		res.send({error:err.message});
 		next()
 	})
 }
