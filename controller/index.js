@@ -15,7 +15,7 @@ function index(req, res, next) {
 		.limit(limit)
 		.skip(page * limit)
 		.exec()
-		.then(hotel => {
+		.then(hotels => {
 			if(hotels){
 			res.send(Object.assign(hotels,{Notice:"switch to api v2 before the 1st of April ;)."}));
 			}else{
@@ -38,7 +38,7 @@ function findByName(req, res, next) {
 		.limit(limit)
 		.skip(page * limit)
 		.exec()
-		.then(hotel => {
+		.then(hotels => {
 			if(hotels){
 			res.send(Object.assign(hotels,{Notice:"switch to api v2 before the 1st of April ;)."}));
 			}else{
@@ -67,7 +67,7 @@ function findByCity(req, res, next) {
 		.limit(limit)
 		.skip(page * limit)
 		.exec()
-		.then(hotel => {
+		.then(hotels => {
 			if(hotels){
 			res.send(Object.assign(hotels,{Notice:"switch to api v2 before the 1st of April ;)."}));
 			}else{
@@ -96,7 +96,7 @@ function findByState(req, res, next) {
 		.limit(limit)
 		.skip(page * limit)
 		.exec()
-		.then(hotel => {
+		.then(hotels => {
 			if(hotels){
 			res.send(Object.assign(hotels,{Notice:"switch to api v2 before the 1st of April ;)."}));
 			}else{
@@ -125,7 +125,7 @@ function apiV2Index(req, res, next) {
 		.limit(limit)
 		.skip(page * limit)
 		.exec()
-		.then(hotel => {
+		.then(hotels => {
 			if(hotels){
 				res.send(hotels);
 			}else{
