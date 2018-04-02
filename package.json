@@ -18,6 +18,6 @@
     "require_all": "^2.0.2",
     "restify": "^6.3.1",
     "restify-router": "^0.5.0",
-    "web-crawljs": "^2.1.2"
+    "web-crawljs": "github:kayslay/web-crawljs#next"
   }
 }
