@@ -7,6 +7,7 @@ const hotelSchema = new Schema({
 	state: {type: String, required: false},
 	present_price: {type: String, required: false},
 	features: {type: [String]},
+	updated:{type:Boolean,default:false},
 	hotelsNg_link: {type: String, required: false},
 	description:String,
 	room_types: [{name:String,facilities:[String],price:String}]
