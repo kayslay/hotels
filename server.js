@@ -16,7 +16,7 @@ server.listen((env.PORT || 8000), () => {
 });
 
 //run this function when u want to crawl
-require("./lib/hotels_crawl");
+// require("./lib/hotels_crawl");
 
 
 
