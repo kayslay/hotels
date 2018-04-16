@@ -33,13 +33,15 @@ The request query parameters
 Get a single hotel [https://hotels-apis.herokuapp.com/api/v2/:id](https://hotels-apis.herokuapp.com/api/v2/5a0075853438c300122bbda0)
 
 The route parameter
+
 | parameter   | required |              Description               |
-| ----------- | :------: | :------------------------------------: |
+| :-----------: | :------: | :------------------------------------: |
 | **id** |  true   | the id of the hotel to get |
 
 The request query parameter
+
 | parameter   | required |              Description               |
-| ----------- | :------: | :------------------------------------: |
+| :-----------: | :------: | :------------------------------------: |
 | **select** |  false   |  the parameter to select in each hotel. the parameters are separated by a ",". ex: `"hotel_name,city"` |
 
 # Endpoints API V1
