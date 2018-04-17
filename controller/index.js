@@ -25,7 +25,7 @@ function index(req, res, next) {
 			next()
 		})
 		.catch(err => {
-			res.status(503); //Todo find the right status
+			res.status(500); //Todo find the right status
 			res.send({error:err.message});
 			next()
 		})
@@ -48,7 +48,7 @@ function findByName(req, res, next) {
 			next()
 		})
 		.catch(err => {
-			res.status(503); //Todo find the right status
+			res.status(500); //Todo find the right status
 			res.send({error:err.message});
 			next()
 		})
@@ -77,7 +77,7 @@ function findByCity(req, res, next) {
 			next()
 		})
 		.catch(err => {
-			res.status(503); //Todo find the right status
+			res.status(500); //Todo find the right status
 			res.send({error:err.message});
 			next()
 		})
@@ -106,7 +106,7 @@ function findByState(req, res, next) {
 			next()
 		})
 		.catch(err => {
-			res.status(503); //Todo find the right status
+			res.status(500); //Todo find the right status
 			res.send({error:err.message});
 			next()
 		})
@@ -135,7 +135,7 @@ function apiV2Index(req, res, next) {
 			next()
 		})
 		.catch(err => {
-			res.status(503); //Todo find the right status
+			res.status(500); //Todo find the right status
 			res.send({error:err.message});
 			next()
 		})
@@ -159,7 +159,7 @@ function apiV2Single(req,res,next){
 		next()
 	})
 	.catch(err => {
-		res.status(503); //Todo find the right status
+		res.status(500); //Todo find the right status
 		res.send({error:err.message});
 		next()
 	})
