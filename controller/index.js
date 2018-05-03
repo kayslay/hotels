@@ -16,11 +16,11 @@ function index(req, res, next) {
 		.skip(page * limit)
 		.exec()
 		.then(hotels => {
-			if(hotels){
-			res.send(Object.assign(hotels,{Notice:"switch to api v2 before the 1st of April ;)."}));
-			}else{
-				res.status(404)
-				res.send({error:"empty object returned"})
+			if (hotels.length) {
+				res.send(Object.assign(hotels, { Notice: "switch to api v2 before the 1st of April ;)" }));
+			} else {
+				res.status(406)
+				res.send({ error: "no hotel with filter exists" })
 			}
 			next()
 		})
@@ -39,11 +39,11 @@ function findByName(req, res, next) {
 		.skip(page * limit)
 		.exec()
 		.then(hotels => {
-			if(hotels){
-			res.send(Object.assign(hotels,{Notice:"switch to api v2 before the 1st of April ;)."}));
-			}else{
-				res.status(404)
-				res.send({error:"empty object returned"})
+			if (hotels.length) {
+				res.send(Object.assign(hotels, { Notice: "switch to api v2 before the 1st of April ;)" }));
+			} else {
+				res.status(406)
+				res.send({ error: "no hotel with filter exists" })
 			}
 			next()
 		})
@@ -68,11 +68,11 @@ function findByCity(req, res, next) {
 		.skip(page * limit)
 		.exec()
 		.then(hotels => {
-			if(hotels){
-			res.send(Object.assign(hotels,{Notice:"switch to api v2 before the 1st of April ;)."}));
-			}else{
-				res.status(404)
-				res.send({error:"empty object returned"})
+			if (hotels.length) {
+				res.send(Object.assign(hotels, { Notice: "switch to api v2 before the 1st of April ;)" }));
+			} else {
+				res.status(406)
+				res.send({ error: "no hotel with filter exists" })
 			}
 			next()
 		})
@@ -97,11 +97,11 @@ function findByState(req, res, next) {
 		.skip(page * limit)
 		.exec()
 		.then(hotels => {
-			if(hotels){
-			res.send(Object.assign(hotels,{Notice:"switch to api v2 before the 1st of April ;)."}));
-			}else{
-				res.status(404)
-				res.send({error:"empty object returned"})
+			if (hotels.length) {
+				res.send(Object.assign(hotels, { Notice: "switch to api v2 before the 1st of April ;)" }));
+			} else {
+				res.status(406)
+				res.send({ error: "no hotel with filter exists" })
 			}
 			next()
 		})
@@ -126,11 +126,11 @@ function apiV2Index(req, res, next) {
 		.skip(page * limit)
 		.exec()
 		.then(hotels => {
-			if(hotels){
+			if (hotels.length) {
 				res.send(hotels);
-			}else{
-				res.status(404)
-				res.send({error:"empty object returned"})
+			} else {
+				res.status(406)
+				res.send({ error: "no hotel with filter exists" })
 			}
 			next()
 		})

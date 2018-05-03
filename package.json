@@ -13,11 +13,13 @@
   "author": "Badewa Kayode <badewakayode1@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "chai": "^4.1.2",
     "dotenv": "^4.0.0",
+    "mocha": "^3.5.3",
     "mongoose": "^4.13.0",
     "require_all": "^2.0.2",
     "restify": "^6.3.1",
     "restify-router": "^0.5.0",
-    "web-crawljs": "github:kayslay/web-crawljs#next"
+    "web-crawljs": "^2.2.0"
   }
 }

@@ -1,9 +1,15 @@
 # API for hotels in Nigeria
 
-This is an API endpoint for hotels available in Nigeria.
+API to serve hotels available in Nigeria.
 
 Created by crawling [hotels.ng](https://hotels.ng) using
 [web-crawljs](https://github.com/kayslay/web-crawljs), created by [me](https://twitter.com/Kayslaycode).
+
+## NOTE
+
+**This API was created in an attempt to learn and was gotten by crawling [hotels.ng](https://hotels.ng). If I'm contacted by hotel.ng to drop it because of legal issues, it will be dropped**.
+
+**So don't use the API for any important project. It's was created for fun ;)**.
 
 The API endpoint :
 [https://hotels-apis.herokuapp.com/api/v2](https://hotels-apis.herokuapp.com/api/v2)
